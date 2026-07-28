@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Bike, CheckCircle2, MapPin, PackageCheck, Timer } from "lucide-react";
 
-const WHATSAPP = "244900000000";
+
 
 const STEPS = [
   { icon: PackageCheck, label: "Pedido confirmado", detail: "Separando o teu vaper de 10.000 Puffs" },
@@ -48,9 +48,6 @@ export function OrderSimulator() {
   const mins = Math.floor(eta / 60);
   const secs = String(eta % 60).padStart(2, "0");
 
-  const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-    `Olá! Quero garantir ${qty} vaper(s) de 10.000 Puffs por ${total.toLocaleString("pt-AO")} Kz. Nome: ${name.trim()} | Bairro: ${bairro.trim()}`,
-  )}`;
 
   return (
     <div className="mx-auto w-full max-w-2xl rounded-3xl border border-border bg-surface p-6 glow-gold sm:p-9">
@@ -167,17 +164,16 @@ export function OrderSimulator() {
             })}
           </ol>
 
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full rounded-2xl bg-red-gradient px-6 py-5 text-center font-display text-xl text-primary-foreground animate-pulse-glow transition hover:brightness-110"
-          >
-            Confirmar pedido no WhatsApp
-          </a>
+          <div className="rounded-2xl border-2 border-accent/70 bg-surface-2 px-5 py-4 text-center">
+            <p className="font-display text-lg text-gold">Garantia de 7 dias</p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Se não gostares, devolvemos o teu dinheiro.
+            </p>
+          </div>
           <p className="text-center text-xs text-muted-foreground">
-            O motoboy chega em até 45 minutos após a confirmação do pagamento.
+            O motoboy chega em até 45 minutos. Pagas apenas na entrega.
           </p>
+
         </div>
       )}
     </div>

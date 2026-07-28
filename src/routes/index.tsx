@@ -6,7 +6,8 @@ import {
   Check,
   Headphones,
   Lock,
-  MessageCircle,
+  
+
   Package,
   ShieldCheck,
   Sparkles,
@@ -21,10 +22,6 @@ import { Countdown } from "@/components/Countdown";
 import { OrderSimulator } from "@/components/OrderSimulator";
 import { Reveal } from "@/components/Reveal";
 
-const WHATSAPP = "244900000000";
-const WA_LINK = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-  "Olá! Quero garantir o vaper de 10.000 Puffs por 3.960 Kz com frete grátis.",
-)}`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -399,8 +396,36 @@ function Index() {
         </Reveal>
       </section>
 
+      {/* GUARANTEE SEAL */}
+      <section className="px-5 pb-16">
+        <Reveal>
+          <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 rounded-[2rem] border-2 border-accent/70 bg-surface p-8 text-center glow-gold sm:flex-row sm:text-left">
+            <div className="relative grid h-32 w-32 shrink-0 place-items-center rounded-full bg-gold text-accent-foreground">
+              <div className="absolute inset-2 rounded-full border-2 border-dashed border-accent-foreground/40" />
+              <div className="leading-none">
+                <p className="font-display text-4xl">7</p>
+                <p className="text-[0.6rem] font-bold uppercase tracking-[0.2em]">dias</p>
+                <p className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.15em]">
+                  garantia
+                </p>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-2xl text-gold sm:text-3xl">
+                Garantia total de 7 dias
+              </h2>
+              <p className="mt-3 text-sm text-muted-foreground sm:text-base">
+                Se não gostares do teu vaper de 10.000 Puffs, devolvemos o teu dinheiro. Tens 7 dias
+                para testar sem risco — a satisfação é garantida ou o reembolso é integral.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* GUARANTEES */}
       <section className="px-5 pb-20">
+
         <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {GUARANTEES.map((g, i) => {
             const Icon = g.icon;
@@ -442,11 +467,9 @@ function Index() {
             </p>
           </div>
           <div className="space-y-2 text-sm text-muted-foreground">
-            <p className="text-foreground">Contactos</p>
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="block story-link">
-              WhatsApp: +244 900 000 000
-            </a>
+            <p className="text-foreground">Entrega</p>
             <p>Luanda, Angola</p>
+            <p>Pagamento na entrega</p>
           </div>
           <div className="space-y-2 text-sm text-muted-foreground">
             <p className="text-foreground">Informações</p>
@@ -456,26 +479,17 @@ function Index() {
             <a href="#pedido" className="block">
               Termos de Uso
             </a>
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="block">
-              Redes Sociais
-            </a>
+            <p>Garantia de 7 dias</p>
           </div>
+
         </div>
         <p className="mx-auto mt-10 max-w-6xl text-xs text-muted-foreground">
           Venda proibida a menores de 18 anos. Produto contém nicotina.
         </p>
       </footer>
 
-      {/* FLOATING WHATSAPP */}
-      <a
-        href={WA_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Falar no WhatsApp"
-        className="fixed bottom-24 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-success text-background shadow-lg transition hover:scale-110 sm:bottom-28"
-      >
-        <MessageCircle size={26} />
-      </a>
+
+
 
       {/* STICKY CTA */}
       <div

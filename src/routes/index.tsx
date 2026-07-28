@@ -103,9 +103,9 @@ const BENEFITS = [
 
 const STEPS = [
   "Escolhe a quantidade.",
-  "Clica em Comprar Agora.",
-  "Confirma o pedido.",
-  "Recebe em casa no mesmo dia.",
+  "Clica em Comprar Agora e confirma os teus dados.",
+  "Faz o pagamento antecipado (Express, Transferência ou Multicaixa).",
+  "Após confirmarmos o pagamento, o motoboy sai para a entrega.",
 ];
 
 const TESTIMONIALS = [
@@ -469,7 +469,7 @@ function Index() {
           <div className="space-y-2 text-sm text-muted-foreground">
             <p className="text-foreground">Entrega</p>
             <p>Luanda, Angola</p>
-            <p>Pagamento na entrega</p>
+            <p>Pagamento antecipado antes do envio</p>
           </div>
           <div className="space-y-2 text-sm text-muted-foreground">
             <p className="text-foreground">Informações</p>

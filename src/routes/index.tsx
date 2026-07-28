@@ -21,10 +21,6 @@ import { Countdown } from "@/components/Countdown";
 import { OrderSimulator } from "@/components/OrderSimulator";
 import { Reveal } from "@/components/Reveal";
 
-const WHATSAPP = "244900000000";
-const WA_LINK = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-  "Olá! Quero garantir o vaper de 10.000 Puffs por 3.960 Kz com frete grátis.",
-)}`;
 
 export const Route = createFileRoute("/")({
   head: () => ({

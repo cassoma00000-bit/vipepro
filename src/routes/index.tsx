@@ -6,7 +6,7 @@ import {
   Check,
   Headphones,
   Lock,
-  MessageCircle,
+  
 
   Package,
   ShieldCheck,

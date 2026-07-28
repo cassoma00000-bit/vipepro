@@ -48,9 +48,6 @@ export function OrderSimulator() {
   const mins = Math.floor(eta / 60);
   const secs = String(eta % 60).padStart(2, "0");
 
-  const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-    `Olá! Quero garantir ${qty} vaper(s) de 10.000 Puffs por ${total.toLocaleString("pt-AO")} Kz. Nome: ${name.trim()} | Bairro: ${bairro.trim()}`,
-  )}`;
 
   return (
     <div className="mx-auto w-full max-w-2xl rounded-3xl border border-border bg-surface p-6 glow-gold sm:p-9">

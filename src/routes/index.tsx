@@ -442,11 +442,9 @@ function Index() {
             </p>
           </div>
           <div className="space-y-2 text-sm text-muted-foreground">
-            <p className="text-foreground">Contactos</p>
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="block story-link">
-              WhatsApp: +244 900 000 000
-            </a>
+            <p className="text-foreground">Entrega</p>
             <p>Luanda, Angola</p>
+            <p>Pagamento na entrega</p>
           </div>
           <div className="space-y-2 text-sm text-muted-foreground">
             <p className="text-foreground">Informações</p>
@@ -456,10 +454,9 @@ function Index() {
             <a href="#pedido" className="block">
               Termos de Uso
             </a>
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="block">
-              Redes Sociais
-            </a>
+            <p>Garantia de 7 dias</p>
           </div>
+
         </div>
         <p className="mx-auto mt-10 max-w-6xl text-xs text-muted-foreground">
           Venda proibida a menores de 18 anos. Produto contém nicotina.

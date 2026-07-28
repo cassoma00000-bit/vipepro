@@ -1,37 +1,43 @@
 import { useEffect, useState } from "react";
-import { Bike, CheckCircle2, MapPin, PackageCheck, Timer } from "lucide-react";
-
-
+import { Bike, CheckCircle2, MapPin, PackageCheck, ShieldCheck, Timer, Wallet } from "lucide-react";
 
 const STEPS = [
-  { icon: PackageCheck, label: "Pedido confirmado", detail: "Separando o teu vaper de 10.000 Puffs" },
+  { icon: PackageCheck, label: "Pagamento confirmado", detail: "Separando o teu vaper de 10.000 Puffs" },
   { icon: Bike, label: "Motoboy a caminho", detail: "Saiu do nosso ponto em Luanda" },
   { icon: MapPin, label: "Perto do teu bairro", detail: "A poucos minutos da entrega" },
-  { icon: CheckCircle2, label: "Entrega prevista", detail: "Paga apenas na entrega" },
+  { icon: CheckCircle2, label: "Entrega prevista", detail: "Recebes o teu pedido em mãos" },
 ];
+
+const PAYMENT_METHODS = [
+  { label: "Multicaixa Express", value: "923 000 000" },
+  { label: "Transferência / IBAN", value: "AO06 0000 0000 0000 0000 0" },
+  { label: "Titular", value: "Vape Pro Angola" },
+];
+
+type Stage = "form" | "payment" | "delivery";
 
 export function OrderSimulator() {
   const [name, setName] = useState("");
   const [bairro, setBairro] = useState("");
   const [qty, setQty] = useState(1);
-  const [submitted, setSubmitted] = useState(false);
+  const [stage, setStage] = useState<Stage>("form");
   const [step, setStep] = useState(0);
   const [eta, setEta] = useState(45 * 60);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!submitted) return;
+    if (stage !== "delivery") return;
     const t = setInterval(() => {
       setStep((s) => (s < STEPS.length - 1 ? s + 1 : s));
     }, 1800);
     return () => clearInterval(t);
-  }, [submitted]);
+  }, [stage]);
 
   useEffect(() => {
-    if (!submitted) return;
+    if (stage !== "delivery") return;
     const t = setInterval(() => setEta((e) => (e > 0 ? e - 1 : 0)), 1000);
     return () => clearInterval(t);
-  }, [submitted]);
+  }, [stage]);
 
   const total = qty * 3960;
 
@@ -42,21 +48,20 @@ export function OrderSimulator() {
     if (n.length < 2 || n.length > 60) return setError("Escreve o teu nome (2 a 60 caracteres).");
     if (b.length < 2 || b.length > 60) return setError("Escreve o teu bairro (2 a 60 caracteres).");
     setError("");
-    setSubmitted(true);
+    setStage("payment");
   }
 
   const mins = Math.floor(eta / 60);
   const secs = String(eta % 60).padStart(2, "0");
 
-
   return (
     <div className="mx-auto w-full max-w-2xl rounded-3xl border border-border bg-surface p-6 glow-gold sm:p-9">
-      {!submitted ? (
+      {stage === "form" && (
         <form onSubmit={submit} className="space-y-5">
           <div className="text-center">
             <h3 className="text-2xl text-gold sm:text-3xl">Fazer o meu pedido</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Preenche e vê o teu motoboy sair agora mesmo.
+              Preenche os dados, faz o pagamento e o motoboy sai imediatamente.
             </p>
           </div>
 
@@ -121,16 +126,82 @@ export function OrderSimulator() {
           >
             🔥 Comprar agora
           </button>
+          <p className="text-center text-xs text-muted-foreground">
+            Pagamento antecipado. A entrega só é feita após a confirmação do pagamento.
+          </p>
         </form>
-      ) : (
+      )}
+
+      {stage === "payment" && (
+        <div className="space-y-6">
+          <div className="text-center">
+            <h3 className="text-2xl text-gold sm:text-3xl">{name.trim()}, falta só o pagamento</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Destino: {bairro.trim()}, Luanda • {qty} unidade(s)
+            </p>
+          </div>
+
+          <div className="flex items-center justify-between rounded-2xl bg-red-gradient px-5 py-4">
+            <span className="flex items-center gap-2 text-primary-foreground">
+              <Wallet size={20} /> Valor a pagar
+            </span>
+            <span className="font-display text-2xl text-primary-foreground">
+              {total.toLocaleString("pt-AO")} Kz
+            </span>
+          </div>
+
+          <ul className="space-y-3">
+            {PAYMENT_METHODS.map((m) => (
+              <li
+                key={m.label}
+                className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border bg-surface-2 px-4 py-3"
+              >
+                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                  {m.label}
+                </span>
+                <span className="text-sm font-semibold text-foreground">{m.value}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="rounded-2xl border border-accent/60 bg-surface-2 px-5 py-4 text-sm text-muted-foreground">
+            <p className="flex items-center gap-2 font-display text-base text-gold">
+              <ShieldCheck size={18} /> Como funciona
+            </p>
+            <p className="mt-2">
+              1. Efetua o pagamento do valor total. 2. Envia o comprovativo. 3. Assim que o
+              pagamento for confirmado, o motoboy sai para o teu bairro e entrega em até 45
+              minutos.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setStage("delivery")}
+            className="w-full rounded-2xl bg-red-gradient px-6 py-5 font-display text-xl tracking-wide text-primary-foreground animate-pulse-glow transition hover:brightness-110"
+          >
+            ✅ Já efetuei o pagamento
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setStage("form")}
+            className="w-full text-center text-xs text-muted-foreground underline"
+          >
+            Alterar os meus dados
+          </button>
+        </div>
+      )}
+
+      {stage === "delivery" && (
         <div className="space-y-6">
           <div className="text-center">
             <h3 className="text-2xl text-gold sm:text-3xl">
-              {name.trim()}, o teu motoboy já saiu!
+              {name.trim()}, pagamento confirmado — motoboy a sair!
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Destino: {bairro.trim()}, Luanda • {qty} unidade(s) •{" "}
-              {total.toLocaleString("pt-AO")} Kz
+              {total.toLocaleString("pt-AO")} Kz pago
             </p>
           </div>
 
@@ -171,9 +242,8 @@ export function OrderSimulator() {
             </p>
           </div>
           <p className="text-center text-xs text-muted-foreground">
-            O motoboy chega em até 45 minutos. Pagas apenas na entrega.
+            O motoboy chega em até 45 minutos após a confirmação do pagamento.
           </p>
-
         </div>
       )}
     </div>

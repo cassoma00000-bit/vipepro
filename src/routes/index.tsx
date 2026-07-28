@@ -35,11 +35,11 @@ export const Route = createFileRoute("/")({
         content:
           "Queima total de estoque: vaper descartável de 10.000 Puffs de 10.000 Kz por apenas 3.960 Kz. Frete grátis e entrega no mesmo dia em Luanda.",
       },
-      { property: "og:title", content: "Black Sale: Vaper 10.000 Puffs por 3.960 Kz" },
+      { property: "og:title", content: "Black Sale: Vaper 10.000 Puffs por 3.960 Kz em Luanda" },
       {
         property: "og:description",
         content:
-          "Preço antigo 10.000 Kz. Agora 3.960 Kz. Frete grátis, entrega no mesmo dia em toda Luanda. Estoque limitado.",
+          "Queima total de estoque: vaper descartável de 10.000 Puffs de 10.000 Kz por apenas 3.960 Kz. Frete grátis e entrega no mesmo dia em Luanda.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

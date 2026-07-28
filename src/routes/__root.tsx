@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Black Sale: Vaper 10.000 Puffs por 3.960 Kz em Luanda" },
+      { name: "description", content: "Queima total de estoque: vaper descartável de 10.000 Puffs de 10.000 Kz por apenas 3.960 Kz. Frete grátis e entrega no mesmo dia em Luanda." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Black Sale: Vaper 10.000 Puffs por 3.960 Kz em Luanda" },
+      { property: "og:description", content: "Queima total de estoque: vaper descartável de 10.000 Puffs de 10.000 Kz por apenas 3.960 Kz. Frete grátis e entrega no mesmo dia em Luanda." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Black Sale: Vaper 10.000 Puffs por 3.960 Kz em Luanda" },
+      { name: "twitter:description", content: "Queima total de estoque: vaper descartável de 10.000 Puffs de 10.000 Kz por apenas 3.960 Kz. Frete grátis e entrega no mesmo dia em Luanda." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/efce3798-c166-4ee5-9aab-dad59e5f47b1/id-preview-fc7be395--85005331-e51f-4685-8c3f-d12da251f55c.lovable.app-1785266910608.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/efce3798-c166-4ee5-9aab-dad59e5f47b1/id-preview-fc7be395--85005331-e51f-4685-8c3f-d12da251f55c.lovable.app-1785266910608.png" },
     ],
     links: [
       {

@@ -167,17 +167,16 @@ export function OrderSimulator() {
             })}
           </ol>
 
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full rounded-2xl bg-red-gradient px-6 py-5 text-center font-display text-xl text-primary-foreground animate-pulse-glow transition hover:brightness-110"
-          >
-            Confirmar pedido no WhatsApp
-          </a>
+          <div className="rounded-2xl border-2 border-accent/70 bg-surface-2 px-5 py-4 text-center">
+            <p className="font-display text-lg text-gold">Garantia de 7 dias</p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Se não gostares, devolvemos o teu dinheiro.
+            </p>
+          </div>
           <p className="text-center text-xs text-muted-foreground">
-            O motoboy chega em até 45 minutos após a confirmação do pagamento.
+            O motoboy chega em até 45 minutos. Pagas apenas na entrega.
           </p>
+
         </div>
       )}
     </div>

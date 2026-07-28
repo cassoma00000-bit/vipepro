@@ -7,6 +7,7 @@ import {
   Headphones,
   Lock,
   MessageCircle,
+
   Package,
   ShieldCheck,
   Sparkles,

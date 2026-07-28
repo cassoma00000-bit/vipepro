@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Bike, CheckCircle2, MapPin, PackageCheck, Timer } from "lucide-react";
 
-const WHATSAPP = "244900000000";
+
 
 const STEPS = [
   { icon: PackageCheck, label: "Pedido confirmado", detail: "Separando o teu vaper de 10.000 Puffs" },

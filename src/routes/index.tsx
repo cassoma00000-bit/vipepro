@@ -399,8 +399,36 @@ function Index() {
         </Reveal>
       </section>
 
+      {/* GUARANTEE SEAL */}
+      <section className="px-5 pb-16">
+        <Reveal>
+          <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 rounded-[2rem] border-2 border-accent/70 bg-surface p-8 text-center glow-gold sm:flex-row sm:text-left">
+            <div className="relative grid h-32 w-32 shrink-0 place-items-center rounded-full bg-gold text-accent-foreground">
+              <div className="absolute inset-2 rounded-full border-2 border-dashed border-accent-foreground/40" />
+              <div className="leading-none">
+                <p className="font-display text-4xl">7</p>
+                <p className="text-[0.6rem] font-bold uppercase tracking-[0.2em]">dias</p>
+                <p className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.15em]">
+                  garantia
+                </p>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-2xl text-gold sm:text-3xl">
+                Garantia total de 7 dias
+              </h2>
+              <p className="mt-3 text-sm text-muted-foreground sm:text-base">
+                Se não gostares do teu vaper de 10.000 Puffs, devolvemos o teu dinheiro. Tens 7 dias
+                para testar sem risco — a satisfação é garantida ou o reembolso é integral.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* GUARANTEES */}
       <section className="px-5 pb-20">
+
         <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {GUARANTEES.map((g, i) => {
             const Icon = g.icon;

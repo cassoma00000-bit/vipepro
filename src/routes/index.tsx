@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/vape-hero.jpg";
 import { Countdown } from "@/components/Countdown";
-import { OrderSimulator } from "@/components/OrderSimulator";
+import { CHECKOUT_URL, OrderSimulator } from "@/components/OrderSimulator";
 import { Reveal } from "@/components/Reveal";
 
 

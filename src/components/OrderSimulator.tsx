@@ -151,8 +151,9 @@ export function OrderSimulator() {
           <div className="text-center">
             <h3 className="text-2xl text-gold sm:text-3xl">{name.trim()}, falta só o pagamento</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Destino: {bairro.trim()}, Luanda • {qty} unidade(s)
+              Destino: {bairro.trim()}, Luanda • {qty} unidade(s) • Tel: {phone.trim()}
             </p>
+
           </div>
 
           <div className="flex items-center justify-between rounded-2xl bg-red-gradient px-5 py-4">

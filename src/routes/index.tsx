@@ -504,12 +504,15 @@ function Index() {
             <p className="text-xs text-muted-foreground line-through">10.000 Kz</p>
             <p className="font-display text-xl text-gold">3.960 Kz</p>
           </div>
-          <button
-            onClick={scrollToOrder}
-            className="flex-1 rounded-xl bg-red-gradient px-5 py-3 font-display text-lg text-primary-foreground animate-pulse-glow sm:flex-none sm:px-10"
+          <a
+            href={CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 rounded-xl bg-red-gradient px-5 py-3 text-center font-display text-lg text-primary-foreground animate-pulse-glow sm:flex-none sm:px-10"
           >
             Comprar agora
-          </button>
+          </a>
+
         </div>
       </div>
     </div>

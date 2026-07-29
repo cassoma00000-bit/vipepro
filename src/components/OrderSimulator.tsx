@@ -42,7 +42,9 @@ export function OrderSimulator() {
     e.preventDefault();
     const n = name.trim();
     const b = bairro.trim();
+    const p = phone.trim();
     if (n.length < 2 || n.length > 60) return setError("Escreve o teu nome (2 a 60 caracteres).");
+    if (!/^[0-9+\s()-]{9,20}$/.test(p)) return setError("Escreve um número de telefone válido.");
     if (b.length < 2 || b.length > 60) return setError("Escreve o teu bairro (2 a 60 caracteres).");
     setError("");
     setStage("payment");

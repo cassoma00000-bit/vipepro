@@ -8,16 +8,13 @@ const STEPS = [
   { icon: CheckCircle2, label: "Entrega prevista", detail: "Recebes o teu pedido em mãos" },
 ];
 
-const PAYMENT_METHODS = [
-  { label: "Multicaixa Express", value: "923 000 000" },
-  { label: "Transferência / IBAN", value: "AO06 0000 0000 0000 0000 0" },
-  { label: "Titular", value: "Vape Pro Angola" },
-];
+export const CHECKOUT_URL = "https://pay.clickpayon.com/e79fd7be-23be-47d9-b5eb-7f7806d889a8";
 
 type Stage = "form" | "payment" | "delivery";
 
 export function OrderSimulator() {
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [bairro, setBairro] = useState("");
   const [qty, setQty] = useState(1);
   const [stage, setStage] = useState<Stage>("form");
@@ -45,7 +42,9 @@ export function OrderSimulator() {
     e.preventDefault();
     const n = name.trim();
     const b = bairro.trim();
+    const p = phone.trim();
     if (n.length < 2 || n.length > 60) return setError("Escreve o teu nome (2 a 60 caracteres).");
+    if (!/^[0-9+\s()-]{9,20}$/.test(p)) return setError("Escreve um número de telefone válido.");
     if (b.length < 2 || b.length > 60) return setError("Escreve o teu bairro (2 a 60 caracteres).");
     setError("");
     setStage("payment");
@@ -86,7 +85,22 @@ export function OrderSimulator() {
                 className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-accent"
               />
             </label>
+            <label className="block text-left">
+              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                Telefone
+              </span>
+              <input
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                type="tel"
+                inputMode="tel"
+                maxLength={20}
+                placeholder="Ex: 923 000 000"
+                className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-accent"
+              />
+            </label>
           </div>
+
 
           <div className="flex items-center justify-between rounded-xl border border-border bg-surface-2 px-4 py-3">
             <span className="text-sm text-muted-foreground">Quantidade</span>
@@ -137,8 +151,9 @@ export function OrderSimulator() {
           <div className="text-center">
             <h3 className="text-2xl text-gold sm:text-3xl">{name.trim()}, falta só o pagamento</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Destino: {bairro.trim()}, Luanda • {qty} unidade(s)
+              Destino: {bairro.trim()}, Luanda • {qty} unidade(s) • Tel: {phone.trim()}
             </p>
+
           </div>
 
           <div className="flex items-center justify-between rounded-2xl bg-red-gradient px-5 py-4">
@@ -150,38 +165,34 @@ export function OrderSimulator() {
             </span>
           </div>
 
-          <ul className="space-y-3">
-            {PAYMENT_METHODS.map((m) => (
-              <li
-                key={m.label}
-                className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border bg-surface-2 px-4 py-3"
-              >
-                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  {m.label}
-                </span>
-                <span className="text-sm font-semibold text-foreground">{m.value}</span>
-              </li>
-            ))}
-          </ul>
-
           <div className="rounded-2xl border border-accent/60 bg-surface-2 px-5 py-4 text-sm text-muted-foreground">
             <p className="flex items-center gap-2 font-display text-base text-gold">
               <ShieldCheck size={18} /> Como funciona
             </p>
             <p className="mt-2">
-              1. Efetua o pagamento do valor total. 2. Envia o comprovativo. 3. Assim que o
+              1. Clica em Pagar agora e conclui o pagamento na página segura. 2. Assim que o
               pagamento for confirmado, o motoboy sai para o teu bairro e entrega em até 45
               minutos.
             </p>
           </div>
 
+          <a
+            href={CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full rounded-2xl bg-red-gradient px-6 py-5 text-center font-display text-xl tracking-wide text-primary-foreground animate-pulse-glow transition hover:brightness-110"
+          >
+            💳 Pagar agora {total.toLocaleString("pt-AO")} Kz
+          </a>
+
           <button
             type="button"
             onClick={() => setStage("delivery")}
-            className="w-full rounded-2xl bg-red-gradient px-6 py-5 font-display text-xl tracking-wide text-primary-foreground animate-pulse-glow transition hover:brightness-110"
+            className="w-full rounded-2xl border border-accent/60 px-6 py-4 font-display text-lg text-gold transition hover:bg-surface-2"
           >
             ✅ Já efetuei o pagamento
           </button>
+
 
           <button
             type="button"

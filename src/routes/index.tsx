@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/vape-hero.jpg";
 import { Countdown } from "@/components/Countdown";
-import { OrderSimulator } from "@/components/OrderSimulator";
+import { CHECKOUT_URL, OrderSimulator } from "@/components/OrderSimulator";
 import { Reveal } from "@/components/Reveal";
 
 
@@ -45,18 +45,17 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function scrollToOrder() {
-  document.getElementById("pedido")?.scrollIntoView({ behavior: "smooth", block: "center" });
-}
 
 function CTA({ label = "COMPRAR AGORA", className = "" }: { label?: string; className?: string }) {
   return (
-    <button
-      onClick={scrollToOrder}
-      className={`rounded-2xl bg-red-gradient px-8 py-5 font-display text-xl tracking-wide text-primary-foreground animate-pulse-glow transition hover:brightness-110 sm:text-2xl ${className}`}
+    <a
+      href={CHECKOUT_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-block rounded-2xl bg-red-gradient px-8 py-5 text-center font-display text-xl tracking-wide text-primary-foreground animate-pulse-glow transition hover:brightness-110 sm:text-2xl ${className}`}
     >
       {label}
-    </button>
+    </a>
   );
 }
 
@@ -502,12 +501,15 @@ function Index() {
             <p className="text-xs text-muted-foreground line-through">10.000 Kz</p>
             <p className="font-display text-xl text-gold">3.960 Kz</p>
           </div>
-          <button
-            onClick={scrollToOrder}
-            className="flex-1 rounded-xl bg-red-gradient px-5 py-3 font-display text-lg text-primary-foreground animate-pulse-glow sm:flex-none sm:px-10"
+          <a
+            href={CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 rounded-xl bg-red-gradient px-5 py-3 text-center font-display text-lg text-primary-foreground animate-pulse-glow sm:flex-none sm:px-10"
           >
             Comprar agora
-          </button>
+          </a>
+
         </div>
       </div>
     </div>

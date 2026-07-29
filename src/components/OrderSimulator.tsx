@@ -190,7 +190,7 @@ export function OrderSimulator() {
             onClick={() => setStage("delivery")}
             className="w-full rounded-2xl border border-accent/60 px-6 py-4 font-display text-lg text-gold transition hover:bg-surface-2"
           >
-            ✅ Já efetuei o pagamento
+            Continuar
           </button>
 
 

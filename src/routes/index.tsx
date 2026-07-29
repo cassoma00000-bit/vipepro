@@ -45,9 +45,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function scrollToOrder() {
-  document.getElementById("pedido")?.scrollIntoView({ behavior: "smooth", block: "center" });
-}
 
 function CTA({ label = "COMPRAR AGORA", className = "" }: { label?: string; className?: string }) {
   return (

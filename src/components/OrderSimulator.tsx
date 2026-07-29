@@ -147,38 +147,34 @@ export function OrderSimulator() {
             </span>
           </div>
 
-          <ul className="space-y-3">
-            {PAYMENT_METHODS.map((m) => (
-              <li
-                key={m.label}
-                className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border bg-surface-2 px-4 py-3"
-              >
-                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  {m.label}
-                </span>
-                <span className="text-sm font-semibold text-foreground">{m.value}</span>
-              </li>
-            ))}
-          </ul>
-
           <div className="rounded-2xl border border-accent/60 bg-surface-2 px-5 py-4 text-sm text-muted-foreground">
             <p className="flex items-center gap-2 font-display text-base text-gold">
               <ShieldCheck size={18} /> Como funciona
             </p>
             <p className="mt-2">
-              1. Efetua o pagamento do valor total. 2. Envia o comprovativo. 3. Assim que o
+              1. Clica em Pagar agora e conclui o pagamento na página segura. 2. Assim que o
               pagamento for confirmado, o motoboy sai para o teu bairro e entrega em até 45
               minutos.
             </p>
           </div>
 
+          <a
+            href={CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full rounded-2xl bg-red-gradient px-6 py-5 text-center font-display text-xl tracking-wide text-primary-foreground animate-pulse-glow transition hover:brightness-110"
+          >
+            💳 Pagar agora {total.toLocaleString("pt-AO")} Kz
+          </a>
+
           <button
             type="button"
             onClick={() => setStage("delivery")}
-            className="w-full rounded-2xl bg-red-gradient px-6 py-5 font-display text-xl tracking-wide text-primary-foreground animate-pulse-glow transition hover:brightness-110"
+            className="w-full rounded-2xl border border-accent/60 px-6 py-4 font-display text-lg text-gold transition hover:bg-surface-2"
           >
             ✅ Já efetuei o pagamento
           </button>
+
 
           <button
             type="button"

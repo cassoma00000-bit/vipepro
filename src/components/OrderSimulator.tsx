@@ -8,16 +8,13 @@ const STEPS = [
   { icon: CheckCircle2, label: "Entrega prevista", detail: "Recebes o teu pedido em mãos" },
 ];
 
-const PAYMENT_METHODS = [
-  { label: "Multicaixa Express", value: "923 000 000" },
-  { label: "Transferência / IBAN", value: "AO06 0000 0000 0000 0000 0" },
-  { label: "Titular", value: "Vape Pro Angola" },
-];
+export const CHECKOUT_URL = "https://pay.clickpayon.com/e79fd7be-23be-47d9-b5eb-7f7806d889a8";
 
 type Stage = "form" | "payment" | "delivery";
 
 export function OrderSimulator() {
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [bairro, setBairro] = useState("");
   const [qty, setQty] = useState(1);
   const [stage, setStage] = useState<Stage>("form");

@@ -21,6 +21,8 @@ import heroImg from "@/assets/vape-hero.jpg";
 import { Countdown } from "@/components/Countdown";
 import { CHECKOUT_URL, OrderSimulator } from "@/components/OrderSimulator";
 import { Reveal } from "@/components/Reveal";
+import { StockCounter } from "@/components/StockCounter";
+
 
 
 export const Route = createFileRoute("/")({

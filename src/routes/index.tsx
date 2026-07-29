@@ -21,6 +21,8 @@ import heroImg from "@/assets/vape-hero.jpg";
 import { Countdown } from "@/components/Countdown";
 import { CHECKOUT_URL, OrderSimulator } from "@/components/OrderSimulator";
 import { Reveal } from "@/components/Reveal";
+import { StockCounter } from "@/components/StockCounter";
+
 
 
 export const Route = createFileRoute("/")({
@@ -234,14 +236,8 @@ function Index() {
           <div className="mt-8">
             <Countdown />
           </div>
-          <div className="mt-10 rounded-2xl border border-primary/50 bg-surface-2 p-6">
-            <p className="text-center font-display text-lg text-primary animate-scarcity">
-              🔥 Restam apenas 27 unidades disponíveis
-            </p>
-            <div className="mt-4 h-3 w-full overflow-hidden rounded-full bg-background">
-              <div className="h-full w-[18%] rounded-full bg-red-gradient animate-pulse-glow" />
-            </div>
-          </div>
+          <StockCounter />
+
         </Reveal>
       </section>
 

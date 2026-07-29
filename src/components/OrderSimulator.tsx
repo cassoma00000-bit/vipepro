@@ -85,7 +85,22 @@ export function OrderSimulator() {
                 className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-accent"
               />
             </label>
+            <label className="block text-left">
+              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                Telefone
+              </span>
+              <input
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                type="tel"
+                inputMode="tel"
+                maxLength={20}
+                placeholder="Ex: 923 000 000"
+                className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-accent"
+              />
+            </label>
           </div>
+
 
           <div className="flex items-center justify-between rounded-xl border border-border bg-surface-2 px-4 py-3">
             <span className="text-sm text-muted-foreground">Quantidade</span>

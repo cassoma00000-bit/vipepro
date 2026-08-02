@@ -6,7 +6,7 @@ function useDeadline() {
   const [deadline, setDeadline] = useState<number | null>(null);
 
   useEffect(() => {
-    const key = "blacksale_deadline";
+    const key = "promo24h_deadline";
     const stored = Number(window.localStorage.getItem(key));
     if (stored && stored > Date.now()) {
       setDeadline(stored);

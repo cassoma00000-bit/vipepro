@@ -103,7 +103,7 @@ export function OrderSimulator() {
 
 
           <div className="flex items-center justify-between rounded-xl border border-border bg-surface-2 px-4 py-3">
-            <span className="text-sm text-muted-foreground">Quantidade</span>
+            <span className="text-sm text-muted-foreground">Kits (2 LEDs — 5.500 Kz)</span>
             <div className="flex items-center gap-4">
               <button
                 type="button"
@@ -184,15 +184,6 @@ export function OrderSimulator() {
           >
             💳 Pagar agora {total.toLocaleString("pt-AO")} Kz
           </a>
-
-          <button
-            type="button"
-            onClick={() => setStage("delivery")}
-            className="w-full rounded-2xl border border-accent/60 px-6 py-4 font-display text-lg text-gold transition hover:bg-surface-2"
-          >
-            Continuar
-          </button>
-
 
           <button
             type="button"

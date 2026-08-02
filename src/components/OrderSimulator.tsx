@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Bike, CheckCircle2, MapPin, PackageCheck, ShieldCheck, Timer, Wallet } from "lucide-react";
 
 const STEPS = [
-  { icon: PackageCheck, label: "Pagamento confirmado", detail: "Separando o teu vaper de 10.000 Puffs" },
+  { icon: PackageCheck, label: "Pagamento confirmado", detail: "Separando o teu kit 2 LED Astronauta" },
   { icon: Bike, label: "Motoboy a caminho", detail: "Saiu do nosso ponto em Luanda" },
   { icon: MapPin, label: "Perto do teu bairro", detail: "A poucos minutos da entrega" },
   { icon: CheckCircle2, label: "Entrega prevista", detail: "Recebes o teu pedido em mãos" },
@@ -36,7 +36,7 @@ export function OrderSimulator() {
     return () => clearInterval(t);
   }, [stage]);
 
-  const total = qty * 3960;
+  const total = qty * 5500;
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -126,7 +126,7 @@ export function OrderSimulator() {
           </div>
 
           <div className="flex items-center justify-between rounded-xl bg-surface-2 px-4 py-3">
-            <span className="text-sm text-muted-foreground">Total (frete grátis)</span>
+            <span className="text-sm text-muted-foreground">Total (entrega grátis)</span>
             <span className="font-display text-2xl text-gold">
               {total.toLocaleString("pt-AO")} Kz
             </span>

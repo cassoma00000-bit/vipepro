@@ -2,51 +2,44 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   BadgeCheck,
-  Battery,
   Check,
+  Gift,
   Headphones,
+  Lightbulb,
   Lock,
-  
-
+  Moon,
   Package,
   ShieldCheck,
   Sparkles,
   Star,
   Truck,
-  Wallet,
+  Usb,
   X,
   Zap,
 } from "lucide-react";
-import heroImg from "@/assets/vape-hero.jpg";
+import heroImg from "@/assets/astronaut-hero.jpg";
 import { Countdown } from "@/components/Countdown";
 import { CHECKOUT_URL, OrderSimulator } from "@/components/OrderSimulator";
 import { Reveal } from "@/components/Reveal";
 import { StockCounter } from "@/components/StockCounter";
 
-
+const TITLE = "Promoção 24h: 2 LED Astronauta Projetor Galáxia por 5.500 Kz";
+const DESCRIPTION =
+  "Transforma qualquer ambiente num show de estrelas: kit com 2 projetores LED Astronauta Galáxia por apenas 5.500 Kz. Entrega grátis no mesmo dia em toda Luanda.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Black Sale: Vaper 10.000 Puffs por 3.960 Kz em Luanda" },
-      {
-        name: "description",
-        content:
-          "Queima total de estoque: vaper descartável de 10.000 Puffs de 10.000 Kz por apenas 3.960 Kz. Frete grátis e entrega no mesmo dia em Luanda.",
-      },
-      { property: "og:title", content: "Black Sale: Vaper 10.000 Puffs por 3.960 Kz em Luanda" },
-      {
-        property: "og:description",
-        content:
-          "Queima total de estoque: vaper descartável de 10.000 Puffs de 10.000 Kz por apenas 3.960 Kz. Frete grátis e entrega no mesmo dia em Luanda.",
-      },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
 });
-
 
 function CTA({ label = "COMPRAR AGORA", className = "" }: { label?: string; className?: string }) {
   return (
@@ -63,7 +56,7 @@ function CTA({ label = "COMPRAR AGORA", className = "" }: { label?: string; clas
 
 function TopBar() {
   const item =
-    "🚨 BLACK SALE • Frete Grátis • Entrega no Mesmo Dia • Estoque Limitado •";
+    "🚨 PROMOÇÃO IMPERDÍVEL • Entrega Grátis a Toda Luanda • Só Nas Próximas 24H • Estoque Limitado •";
   return (
     <div className="fixed inset-x-0 top-0 z-50 overflow-hidden bg-red-gradient py-2">
       <div className="flex w-[200%] animate-marquee">
@@ -86,26 +79,34 @@ function TopBar() {
 
 const PERKS = [
   { icon: Truck, text: "Entrega no mesmo dia em todos cantos de Luanda" },
-  { icon: Package, text: "Frete GRÁTIS" },
+  { icon: Package, text: "Entrega GRÁTIS" },
   { icon: Lock, text: "Compra 100% segura" },
   { icon: Star, text: "Produto original e de alta qualidade" },
 ];
 
 const BENEFITS = [
-  { icon: Zap, title: "Até 10.000 Puffs", text: "Autonomia gigante para semanas de uso." },
-  { icon: Sparkles, title: "Sabores Premium", text: "Mistura intensa, suave e equilibrada." },
-  { icon: Battery, title: "Grande duração", text: "Bateria feita para durar até à última puff." },
-  { icon: Package, title: "Compacto", text: "Cabe no bolso, discreto e elegante." },
-  { icon: Check, title: "Pronto para usar", text: "Sem carregar, sem encher, sem complicação." },
-  { icon: Wallet, title: "Custo-benefício", text: "Menos de 0,40 Kz por puff." },
-  { icon: Truck, title: "Frete Grátis", text: "Não pagas nada pela entrega." },
-  { icon: Zap, title: "Entrega Rápida", text: "No mesmo dia, em todo canto de Luanda." },
+  {
+    icon: Sparkles,
+    title: "Projeção de galáxia colorida",
+    text: "Nebulosas e estrelas em movimento em qualquer parede ou tecto.",
+  },
+  { icon: Lightbulb, title: "2 LEDs potentes", text: "Brilho intenso mesmo em salas grandes." },
+  {
+    icon: Zap,
+    title: "Controle remoto incluso",
+    text: "Muda cor, brilho e modo sem sair da cama.",
+  },
+  { icon: Usb, title: "Alimentação via USB", text: "Liga na powerbank, no PC ou no carregador." },
+  { icon: Moon, title: "Modo nocturno", text: "Timer automático para dormires com o céu ligado." },
+  { icon: Gift, title: "Presente criativo", text: "O presente que toda a gente filma e partilha." },
+  { icon: Truck, title: "Entrega Grátis", text: "Não pagas nada pela entrega em Luanda." },
+  { icon: ShieldCheck, title: "Qualidade e durabilidade", text: "Material premium, feito para durar." },
 ];
 
 const STEPS = [
-  "Escolhe a quantidade.",
+  "Escolhe a quantidade de kits.",
   "Clica em Comprar Agora e confirma os teus dados.",
-  "Faz o pagamento antecipado (Express, Transferência ou Multicaixa).",
+  "Faz o pagamento antecipado na página segura.",
   "Após confirmarmos o pagamento, o motoboy sai para a entrega.",
 ];
 
@@ -113,17 +114,17 @@ const TESTIMONIALS = [
   {
     name: "Nelson M.",
     hood: "Talatona, Luanda",
-    text: "Comprei de manhã e recebi no mesmo dia. Excelente atendimento.",
+    text: "Comprei de manhã e recebi no mesmo dia. O quarto do meu filho ficou outro nível.",
   },
   {
     name: "Edna F.",
     hood: "Cazenga, Luanda",
-    text: "Produto original, ótimo sabor e ainda com frete grátis.",
+    text: "As cores são lindas mesmo e o comando funciona super bem. Ainda com entrega grátis.",
   },
   {
     name: "Kiami D.",
     hood: "Viana, Luanda",
-    text: "Melhor promoção que encontrei. Vale muito a pena.",
+    text: "Comprei os dois para oferecer. Melhor promoção que encontrei em Luanda.",
   },
 ];
 
@@ -132,7 +133,7 @@ const GUARANTEES = [
   { icon: ShieldCheck, text: "Compra Segura" },
   { icon: Headphones, text: "Atendimento Rápido" },
   { icon: Truck, text: "Entrega no Mesmo Dia" },
-  { icon: Package, text: "Frete Grátis" },
+  { icon: Package, text: "Entrega Grátis" },
 ];
 
 function Index() {
@@ -158,40 +159,43 @@ function Index() {
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
           <div className="animate-rise text-center lg:text-left">
             <span className="inline-block rounded-full border border-accent/50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.3em] text-gold">
-              Queima total de estoque
+              Promoção imperdível • 24 horas
             </span>
             <h1 className="mt-6 text-4xl leading-[0.95] sm:text-6xl">
-              <span className="text-gold">🔥 Black Sale</span>
+              <span className="text-gold">Transforma qualquer ambiente</span>
               <br />
-              Queima total de estoque 🔥
+              num show de estrelas ✨
             </h1>
             <p className="mt-5 text-lg text-muted-foreground">
-              O vaper descartável de <strong className="text-foreground">10.000 Puffs</strong> que
-              custava 10.000 Kz agora custa apenas 3.960 Kz.
+              Kit com <strong className="text-foreground">2 LED Astronauta — Projetor Galáxia</strong>{" "}
+              por apenas 5.500 Kz, com entrega grátis a toda Luanda.
             </p>
 
             <ul className="mt-6 flex flex-wrap justify-center gap-3 lg:justify-start">
-              {["Até 10.000 Puffs", "Frete Grátis", "Entrega no Mesmo Dia", "Produto Original"].map(
-                (t) => (
-                  <li
-                    key={t}
-                    className="flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm"
-                  >
-                    <Check size={16} className="text-success" /> {t}
-                  </li>
-                ),
-              )}
+              {[
+                "Projeção de galáxia colorida",
+                "2 LEDs potentes",
+                "Controle remoto incluso",
+                "Alimentação via USB",
+              ].map((t) => (
+                <li
+                  key={t}
+                  className="flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm"
+                >
+                  <Check size={16} className="text-success" /> {t}
+                </li>
+              ))}
             </ul>
 
             <div className="mt-8 flex flex-col items-center gap-2 lg:items-start">
               <span className="font-display text-3xl text-muted-foreground line-through">
-                10.000 Kz
+                9.500 Kz
               </span>
               <span className="font-display text-6xl leading-none text-gold sm:text-8xl">
-                3.960 Kz
+                5.500 Kz
               </span>
               <span className="rounded-full bg-red-gradient px-4 py-1.5 text-sm font-bold text-primary-foreground">
-                Poupas 6.040 Kz
+                Poupas 4.000 Kz
               </span>
             </div>
 
@@ -204,9 +208,9 @@ function Index() {
             <div className="overflow-hidden rounded-[2rem] border border-border glow-gold">
               <img
                 src={heroImg}
-                alt="Vaper descartável de 10.000 puffs em promoção Black Sale"
-                width={1200}
-                height={1200}
+                alt="Kit com 2 projetores LED Astronauta Galáxia a projetar estrelas num quarto"
+                width={1024}
+                height={1024}
                 className="h-full w-full object-cover"
               />
             </div>
@@ -237,7 +241,6 @@ function Index() {
             <Countdown />
           </div>
           <StockCounter />
-
         </Reveal>
       </section>
 
@@ -275,27 +278,30 @@ function Index() {
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             <Reveal>
               <div className="h-full rounded-2xl border border-border bg-surface p-7 opacity-80">
-                <h3 className="text-xl text-muted-foreground">Outros Pods</h3>
+                <h3 className="text-xl text-muted-foreground">Outros projetores</h3>
                 <ul className="mt-5 space-y-3 text-sm">
-                  {["Pouca duração", "Preço elevado", "Sem entrega rápida", "Frete pago"].map(
-                    (t) => (
-                      <li key={t} className="flex items-center gap-3 text-muted-foreground">
-                        <X size={18} className="text-primary" /> {t}
-                      </li>
-                    ),
-                  )}
+                  {[
+                    "Luz fraca e sem cor",
+                    "Sem controle remoto",
+                    "Preço elevado por 1 unidade",
+                    "Entrega paga e demorada",
+                  ].map((t) => (
+                    <li key={t} className="flex items-center gap-3 text-muted-foreground">
+                      <X size={18} className="text-primary" /> {t}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </Reveal>
             <Reveal delay={120}>
               <div className="h-full rounded-2xl border border-accent/60 bg-surface p-7 glow-gold">
-                <h3 className="text-xl text-gold">O nosso Vaper</h3>
+                <h3 className="text-xl text-gold">O nosso kit 2 LED Astronauta</h3>
                 <ul className="mt-5 space-y-3 text-sm">
                   {[
-                    "Até 10.000 Puffs",
-                    "Apenas 3.960 Kz",
-                    "Frete Grátis",
-                    "Entrega no Mesmo Dia",
+                    "Projeção de galáxia colorida",
+                    "2 unidades por apenas 5.500 Kz",
+                    "Controle remoto incluso",
+                    "Entrega Grátis no Mesmo Dia",
                     "Produto Original",
                   ].map((t) => (
                     <li key={t} className="flex items-center gap-3">
@@ -373,19 +379,15 @@ function Index() {
       <section className="px-5 py-20">
         <Reveal>
           <div className="mx-auto max-w-4xl rounded-[2rem] bg-red-gradient p-10 text-center sm:p-16">
-            <h2 className="text-4xl text-primary-foreground sm:text-6xl">Black Sale</h2>
-            <p className="mt-6 text-xs uppercase tracking-[0.35em] text-primary-foreground/80">
-              De
-            </p>
-            <p className="font-display text-4xl text-primary-foreground/70 line-through">
-              10.000 Kz
-            </p>
+            <h2 className="text-4xl text-primary-foreground sm:text-6xl">Promoção Imperdível</h2>
+            <p className="mt-6 text-xs uppercase tracking-[0.35em] text-primary-foreground/80">De</p>
+            <p className="font-display text-4xl text-primary-foreground/70 line-through">9.500 Kz</p>
             <p className="mt-4 text-xs uppercase tracking-[0.35em] text-primary-foreground/80">
               Por apenas
             </p>
-            <p className="font-display text-6xl text-primary-foreground sm:text-8xl">3.960 Kz</p>
+            <p className="font-display text-6xl text-primary-foreground sm:text-8xl">5.500 Kz</p>
             <span className="mt-8 inline-block rounded-full border-2 border-accent px-6 py-3 font-display text-lg text-gold">
-              Poupas 6.040 Kz
+              Poupas 4.000 Kz
             </span>
           </div>
         </Reveal>
@@ -400,18 +402,14 @@ function Index() {
               <div className="leading-none">
                 <p className="font-display text-4xl">7</p>
                 <p className="text-[0.6rem] font-bold uppercase tracking-[0.2em]">dias</p>
-                <p className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.15em]">
-                  garantia
-                </p>
+                <p className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.15em]">garantia</p>
               </div>
             </div>
             <div>
-              <h2 className="text-2xl text-gold sm:text-3xl">
-                Garantia total de 7 dias
-              </h2>
+              <h2 className="text-2xl text-gold sm:text-3xl">Garantia total de 7 dias</h2>
               <p className="mt-3 text-sm text-muted-foreground sm:text-base">
-                Se não gostares do teu vaper de 10.000 Puffs, devolvemos o teu dinheiro. Tens 7 dias
-                para testar sem risco — a satisfação é garantida ou o reembolso é integral.
+                Se não gostares do teu projetor LED Astronauta, devolvemos o teu dinheiro. Tens 7
+                dias para testar sem risco — a satisfação é garantida ou o reembolso é integral.
               </p>
             </div>
           </div>
@@ -420,7 +418,6 @@ function Index() {
 
       {/* GUARANTEES */}
       <section className="px-5 pb-20">
-
         <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {GUARANTEES.map((g, i) => {
             const Icon = g.icon;
@@ -443,8 +440,8 @@ function Index() {
             Não deixes esta <span className="text-gold">oportunidade</span> passar!
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-            O preço promocional de 3.960 Kz termina em 48 horas. Depois da promoção, o valor volta
-            para 10.000 Kz.
+            O preço promocional de 5.500 Kz termina em 24 horas. Depois da promoção, o valor volta
+            para 9.500 Kz.
           </p>
           <div className="mt-10">
             <CTA label="🔥 GARANTIR O MEU AGORA" />
@@ -456,7 +453,7 @@ function Index() {
       <footer className="border-t border-border bg-surface px-5 py-14">
         <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-3">
           <div>
-            <h3 className="text-lg text-gold">Black Sale Vapers</h3>
+            <h3 className="text-lg text-gold">LED Astronauta Luanda</h3>
             <p className="mt-3 text-sm text-muted-foreground">
               Entrega no mesmo dia em todos os cantos de Luanda.
             </p>
@@ -476,15 +473,12 @@ function Index() {
             </a>
             <p>Garantia de 7 dias</p>
           </div>
-
         </div>
         <p className="mx-auto mt-10 max-w-6xl text-xs text-muted-foreground">
-          Venda proibida a menores de 18 anos. Produto contém nicotina.
+          Projetor LED Astronauta Galáxia • Alimentação via USB • Produto original com garantia de 7
+          dias.
         </p>
       </footer>
-
-
-
 
       {/* STICKY CTA */}
       <div
@@ -494,8 +488,8 @@ function Index() {
       >
         <div className="mx-auto flex max-w-4xl items-center justify-between gap-4">
           <div className="leading-tight">
-            <p className="text-xs text-muted-foreground line-through">10.000 Kz</p>
-            <p className="font-display text-xl text-gold">3.960 Kz</p>
+            <p className="text-xs text-muted-foreground line-through">9.500 Kz</p>
+            <p className="font-display text-xl text-gold">5.500 Kz</p>
           </div>
           <a
             href={CHECKOUT_URL}
@@ -505,7 +499,6 @@ function Index() {
           >
             Comprar agora
           </a>
-
         </div>
       </div>
     </div>

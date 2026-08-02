@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const TOTAL = 48 * 60 * 60 * 1000;
+const TOTAL = 24 * 60 * 60 * 1000;
 
 function useDeadline() {
   const [deadline, setDeadline] = useState<number | null>(null);

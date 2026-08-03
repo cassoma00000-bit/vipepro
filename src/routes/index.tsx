@@ -239,16 +239,14 @@ function Index() {
         </div>
       </header>
 
-      {/* COUNTDOWN + STOCK */}
+      {/* STOCK */}
       <section className="border-y border-border bg-surface px-5 py-16">
         <Reveal className="mx-auto max-w-3xl">
-          <h2 className="text-center text-2xl text-gold sm:text-4xl">A oferta termina em</h2>
-          <div className="mt-8">
-            <Countdown />
-          </div>
+          <h2 className="text-center text-2xl text-gold sm:text-4xl">Estoque em tempo real</h2>
           <StockCounter />
         </Reveal>
       </section>
+
 
       {/* BENEFITS */}
       <section className="px-5 py-20">

@@ -118,19 +118,19 @@ const TESTIMONIALS = [
     name: "Rosa C.",
     hood: "Talatona, Luanda",
     text: "Comprei de manhã e recebi no mesmo dia. O quarto do meu filho ficou outro nível.",
-    photo: photo1.url,
+    photo: photo1,
   },
   {
     name: "Edna F.",
     hood: "Cazenga, Luanda",
     text: "As cores são lindas mesmo e o comando funciona super bem. Ainda com entrega grátis.",
-    photo: photo2.url,
+    photo: photo2,
   },
   {
     name: "Kiami D.",
     hood: "Viana, Luanda",
     text: "Comprei os dois para oferecer. Melhor promoção que encontrei em Luanda.",
-    photo: photo3.url,
+    photo: photo3,
   },
 ];
 

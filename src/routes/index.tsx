@@ -115,7 +115,7 @@ const STEPS = [
 
 const TESTIMONIALS = [
   {
-    name: "Nelson M.",
+    name: "Rosa C.",
     hood: "Talatona, Luanda",
     text: "Comprei de manhã e recebi no mesmo dia. O quarto do meu filho ficou outro nível.",
     photo: photo1.url,

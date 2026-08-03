@@ -364,16 +364,24 @@ function Index() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.name} delay={i * 100}>
-                <figure className="h-full rounded-2xl border border-border bg-surface-2 p-7">
-                  <div className="flex gap-1">
-                    {Array.from({ length: 5 }).map((_, k) => (
-                      <Star key={k} size={16} className="fill-accent text-accent" />
-                    ))}
+                <figure className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface-2">
+                  <img
+                    src={t.photo}
+                    alt={`Cliente de ${t.hood} com o LED Astronauta recebido`}
+                    loading="lazy"
+                    className="h-64 w-full object-cover"
+                  />
+                  <div className="flex flex-1 flex-col p-7">
+                    <div className="flex gap-1">
+                      {Array.from({ length: 5 }).map((_, k) => (
+                        <Star key={k} size={16} className="fill-accent text-accent" />
+                      ))}
+                    </div>
+                    <blockquote className="mt-4 text-sm leading-relaxed">"{t.text}"</blockquote>
+                    <figcaption className="mt-5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                      {t.name} — <span className="text-gold">{t.hood}</span>
+                    </figcaption>
                   </div>
-                  <blockquote className="mt-4 text-sm leading-relaxed">"{t.text}"</blockquote>
-                  <figcaption className="mt-5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    {t.name} — {t.hood}
-                  </figcaption>
                 </figure>
               </Reveal>
             ))}

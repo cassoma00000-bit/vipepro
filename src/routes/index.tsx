@@ -18,9 +18,9 @@ import {
   Zap,
 } from "lucide-react";
 import heroImg from "@/assets/astronaut-hero.jpg";
-import photo1 from "@/assets/image-4.png.asset.json";
-import photo2 from "@/assets/image-5.png.asset.json";
-import photo3 from "@/assets/image-6.png.asset.json";
+import photo1 from "@/assets/image-4.png";
+import photo2 from "@/assets/image-5.png";
+import photo3 from "@/assets/image-6.png";
 import { Countdown } from "@/components/Countdown";
 import { CHECKOUT_URL, OrderSimulator } from "@/components/OrderSimulator";
 import { Reveal } from "@/components/Reveal";
@@ -118,19 +118,19 @@ const TESTIMONIALS = [
     name: "Rosa C.",
     hood: "Talatona, Luanda",
     text: "Comprei de manhã e recebi no mesmo dia. O quarto do meu filho ficou outro nível.",
-    photo: photo1.url,
+    photo: photo1,
   },
   {
     name: "Edna F.",
     hood: "Cazenga, Luanda",
     text: "As cores são lindas mesmo e o comando funciona super bem. Ainda com entrega grátis.",
-    photo: photo2.url,
+    photo: photo2,
   },
   {
     name: "Kiami D.",
     hood: "Viana, Luanda",
     text: "Comprei os dois para oferecer. Melhor promoção que encontrei em Luanda.",
-    photo: photo3.url,
+    photo: photo3,
   },
 ];
 

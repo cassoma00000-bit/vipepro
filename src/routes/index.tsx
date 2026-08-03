@@ -155,6 +155,17 @@ function Index() {
     <div className="min-h-screen bg-background pt-9">
       <TopBar />
 
+      {/* COUNTDOWN NO TOPO */}
+      <section className="border-b border-border bg-surface px-5 py-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center text-xl text-gold sm:text-3xl">A oferta termina em</h2>
+          <div className="mt-6">
+            <Countdown />
+          </div>
+        </div>
+      </section>
+
+
       {/* HERO */}
       <header className="relative overflow-hidden px-5 pb-20 pt-14">
         <div

@@ -18,9 +18,9 @@ import {
   Zap,
 } from "lucide-react";
 import heroImg from "@/assets/astronaut-hero.jpg";
-import photo1 from "@/assets/image-4.png.asset.json";
-import photo2 from "@/assets/image-5.png.asset.json";
-import photo3 from "@/assets/image-6.png.asset.json";
+import photo1 from "@/assets/image-4.png";
+import photo2 from "@/assets/image-5.png";
+import photo3 from "@/assets/image-6.png";
 import { Countdown } from "@/components/Countdown";
 import { CHECKOUT_URL, OrderSimulator } from "@/components/OrderSimulator";
 import { Reveal } from "@/components/Reveal";

@@ -206,13 +206,13 @@ function Index() {
 
             <div className="mt-8 flex flex-col items-center gap-2 lg:items-start">
               <span className="font-display text-3xl text-muted-foreground line-through">
-                9.500 Kz
+                17.000 Kz
               </span>
               <span className="font-display text-6xl leading-none text-gold sm:text-8xl">
                 5.500 Kz
               </span>
               <span className="rounded-full bg-red-gradient px-4 py-1.5 text-sm font-bold text-primary-foreground">
-                Poupas 4.000 Kz
+                Poupas 11.500 Kz
               </span>
             </div>
 
@@ -404,13 +404,13 @@ function Index() {
           <div className="mx-auto max-w-4xl rounded-[2rem] bg-red-gradient p-10 text-center sm:p-16">
             <h2 className="text-4xl text-primary-foreground sm:text-6xl">Promoção Imperdível</h2>
             <p className="mt-6 text-xs uppercase tracking-[0.35em] text-primary-foreground/80">De</p>
-            <p className="font-display text-4xl text-primary-foreground/70 line-through">9.500 Kz</p>
+            <p className="font-display text-4xl text-primary-foreground/70 line-through">17.000 Kz</p>
             <p className="mt-4 text-xs uppercase tracking-[0.35em] text-primary-foreground/80">
               Por apenas
             </p>
             <p className="font-display text-6xl text-primary-foreground sm:text-8xl">5.500 Kz</p>
             <span className="mt-8 inline-block rounded-full border-2 border-accent px-6 py-3 font-display text-lg text-gold">
-              Poupas 4.000 Kz
+              Poupas 11.500 Kz
             </span>
           </div>
         </Reveal>
@@ -464,7 +464,7 @@ function Index() {
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
             O preço promocional de 5.500 Kz termina em 24 horas. Depois da promoção, o valor volta
-            para 9.500 Kz.
+            para 17.000 Kz.
           </p>
           <div className="mt-10">
             <CTA label="🔥 GARANTIR O MEU AGORA" />
@@ -511,7 +511,7 @@ function Index() {
       >
         <div className="mx-auto flex max-w-4xl items-center justify-between gap-4">
           <div className="leading-tight">
-            <p className="text-xs text-muted-foreground line-through">9.500 Kz</p>
+            <p className="text-xs text-muted-foreground line-through">17.000 Kz</p>
             <p className="font-display text-xl text-gold">5.500 Kz</p>
           </div>
           <a

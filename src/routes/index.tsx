@@ -374,12 +374,14 @@ function Index() {
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.name} delay={i * 100}>
                 <figure className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface-2">
-                  <img
-                    src={t.photo}
-                    alt={`Cliente de ${t.hood} com o LED Astronauta recebido`}
-                    loading="lazy"
-                    className="h-64 w-full object-cover"
-                  />
+                  <div className="aspect-[4/5] w-full bg-background">
+                    <img
+                      src={t.photo}
+                      alt={`Cliente de ${t.hood} com o LED Astronauta recebido`}
+                      loading="lazy"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
                   <div className="flex flex-1 flex-col p-7">
                     <div className="flex gap-1">
                       {Array.from({ length: 5 }).map((_, k) => (

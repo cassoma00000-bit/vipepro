@@ -33,21 +33,19 @@ export function StockCounter() {
   const percent = Math.max(8, Math.round((units / 30) * 100));
 
   return (
-    <>
-      <div className="mt-10 rounded-2xl border border-primary/50 bg-surface-2 p-6">
-        <p className="text-center font-display text-lg text-primary animate-scarcity">
-          🔥 Restam apenas {units} unidades disponíveis
-        </p>
-        <div className="mt-4 h-3 w-full overflow-hidden rounded-full bg-background">
-          <div
-            className="h-full rounded-full bg-red-gradient animate-pulse-glow transition-all duration-1000"
-            style={{ width: `${percent}%` }}
-          />
-        </div>
+    <div className="mt-10 rounded-2xl border border-primary/50 bg-surface-2 p-6">
+      <p className="text-center font-display text-lg text-primary animate-scarcity">
+        🔥 Restam apenas {units} unidades disponíveis
+      </p>
+      <div className="mt-4 h-3 w-full overflow-hidden rounded-full bg-background">
+        <div
+          className="h-full rounded-full bg-red-gradient animate-pulse-glow transition-all duration-1000"
+          style={{ width: `${percent}%` }}
+        />
       </div>
 
       {buyer && (
-        <div className="fixed bottom-24 left-4 z-50 max-w-[300px] animate-fade-in rounded-2xl border border-accent/60 bg-surface px-4 py-3 shadow-lg sm:bottom-6">
+        <div className="mt-5 animate-fade-in rounded-2xl border border-accent/60 bg-surface px-4 py-3">
           <p className="flex items-center gap-2 font-display text-sm text-gold">
             <ShoppingBag size={16} /> {buyer.name}
           </p>
@@ -59,6 +57,6 @@ export function StockCounter() {
           </p>
         </div>
       )}
-    </>
+    </div>
   );
 }

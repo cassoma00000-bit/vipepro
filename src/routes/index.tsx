@@ -18,6 +18,9 @@ import {
   Zap,
 } from "lucide-react";
 import heroImg from "@/assets/astronaut-hero.jpg";
+import photo1 from "@/assets/image-4.png.asset.json";
+import photo2 from "@/assets/image-5.png.asset.json";
+import photo3 from "@/assets/image-6.png.asset.json";
 import { Countdown } from "@/components/Countdown";
 import { CHECKOUT_URL, OrderSimulator } from "@/components/OrderSimulator";
 import { Reveal } from "@/components/Reveal";
@@ -115,16 +118,19 @@ const TESTIMONIALS = [
     name: "Nelson M.",
     hood: "Talatona, Luanda",
     text: "Comprei de manhã e recebi no mesmo dia. O quarto do meu filho ficou outro nível.",
+    photo: photo1.url,
   },
   {
     name: "Edna F.",
     hood: "Cazenga, Luanda",
     text: "As cores são lindas mesmo e o comando funciona super bem. Ainda com entrega grátis.",
+    photo: photo2.url,
   },
   {
     name: "Kiami D.",
     hood: "Viana, Luanda",
     text: "Comprei os dois para oferecer. Melhor promoção que encontrei em Luanda.",
+    photo: photo3.url,
   },
 ];
 
@@ -148,6 +154,17 @@ function Index() {
   return (
     <div className="min-h-screen bg-background pt-9">
       <TopBar />
+
+      {/* COUNTDOWN NO TOPO */}
+      <section className="border-b border-border bg-surface px-5 py-8">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center text-xl text-gold sm:text-3xl">A oferta termina em</h2>
+          <div className="mt-6">
+            <Countdown />
+          </div>
+        </div>
+      </section>
+
 
       {/* HERO */}
       <header className="relative overflow-hidden px-5 pb-20 pt-14">
@@ -233,16 +250,14 @@ function Index() {
         </div>
       </header>
 
-      {/* COUNTDOWN + STOCK */}
+      {/* STOCK */}
       <section className="border-y border-border bg-surface px-5 py-16">
         <Reveal className="mx-auto max-w-3xl">
-          <h2 className="text-center text-2xl text-gold sm:text-4xl">A oferta termina em</h2>
-          <div className="mt-8">
-            <Countdown />
-          </div>
+          <h2 className="text-center text-2xl text-gold sm:text-4xl">Estoque em tempo real</h2>
           <StockCounter />
         </Reveal>
       </section>
+
 
       {/* BENEFITS */}
       <section className="px-5 py-20">
@@ -358,16 +373,24 @@ function Index() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.name} delay={i * 100}>
-                <figure className="h-full rounded-2xl border border-border bg-surface-2 p-7">
-                  <div className="flex gap-1">
-                    {Array.from({ length: 5 }).map((_, k) => (
-                      <Star key={k} size={16} className="fill-accent text-accent" />
-                    ))}
+                <figure className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface-2">
+                  <img
+                    src={t.photo}
+                    alt={`Cliente de ${t.hood} com o LED Astronauta recebido`}
+                    loading="lazy"
+                    className="h-64 w-full object-cover"
+                  />
+                  <div className="flex flex-1 flex-col p-7">
+                    <div className="flex gap-1">
+                      {Array.from({ length: 5 }).map((_, k) => (
+                        <Star key={k} size={16} className="fill-accent text-accent" />
+                      ))}
+                    </div>
+                    <blockquote className="mt-4 text-sm leading-relaxed">"{t.text}"</blockquote>
+                    <figcaption className="mt-5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                      {t.name} — <span className="text-gold">{t.hood}</span>
+                    </figcaption>
                   </div>
-                  <blockquote className="mt-4 text-sm leading-relaxed">"{t.text}"</blockquote>
-                  <figcaption className="mt-5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    {t.name} — {t.hood}
-                  </figcaption>
                 </figure>
               </Reveal>
             ))}

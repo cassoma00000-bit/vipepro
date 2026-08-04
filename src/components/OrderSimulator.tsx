@@ -8,7 +8,7 @@ const STEPS = [
   { icon: CheckCircle2, label: "Entrega prevista", detail: "Recebes o teu pedido em mãos" },
 ];
 
-export const CHECKOUT_URL = "https://pay.clickpayon.com/e79fd7be-23be-47d9-b5eb-7f7806d889a8";
+export const CHECKOUT_URL = "https://www.kintu.org/product/bd401dde-9fcb-4035-a9c0-1bbf8e8430af";
 
 type Stage = "form" | "payment" | "delivery";
 

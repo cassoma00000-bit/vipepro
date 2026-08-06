@@ -475,17 +475,22 @@ function Index() {
       <section className="border-t border-border px-5 py-24 text-center">
         <Reveal>
           <h2 className="mx-auto max-w-3xl text-4xl leading-tight sm:text-6xl">
-            Não deixes esta <span className="text-gold">oportunidade</span> passar!
+            Amanhã este kit custa <span className="text-gold">17.000 Kz</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-            O preço promocional de 5.500 Kz termina em 24 horas. Depois da promoção, o valor volta
-            para 17.000 Kz.
+            Hoje pagas 5.500 Kz pelos 2 LEDs, com entrega grátis no mesmo dia e 7 dias para
+            devolver se não gostares. Quando o contador chegar a zero — ou as últimas unidades
+            saírem — o preço volta ao normal.
           </p>
           <div className="mt-10">
-            <CTA label="🔥 GARANTIR O MEU AGORA" />
+            <CTA label="🔥 QUERO GARANTIR ANTES DE ESGOTAR" />
           </div>
+          <p className="mt-4 text-xs text-muted-foreground">
+            Risco zero: se não gostares, devolvemos 100% do teu dinheiro em 7 dias.
+          </p>
         </Reveal>
       </section>
+
 
       {/* FOOTER */}
       <footer className="border-t border-border bg-surface px-5 py-14">

@@ -26,9 +26,9 @@ import { CHECKOUT_URL, OrderSimulator } from "@/components/OrderSimulator";
 import { Reveal } from "@/components/Reveal";
 import { StockCounter } from "@/components/StockCounter";
 
-const TITLE = "Promoção 24h: 2 LED Astronauta Projetor Galáxia por 5.500 Kz";
+const TITLE = "Só Hoje: 2 LED Astronauta Galáxia por 5.500 Kz em Luanda";
 const DESCRIPTION =
-  "Transforma qualquer ambiente num show de estrelas: kit com 2 projetores LED Astronauta Galáxia por apenas 5.500 Kz. Entrega grátis no mesmo dia em toda Luanda.";
+  "Últimas unidades: kit com 2 projetores LED Astronauta Galáxia de 17.000 Kz por 5.500 Kz. Entrega grátis no mesmo dia em Luanda e 7 dias de garantia. Oferta acaba em 24h.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

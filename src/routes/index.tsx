@@ -266,10 +266,19 @@ function Index() {
       {/* STOCK */}
       <section className="border-y border-border bg-surface px-5 py-16">
         <Reveal className="mx-auto max-w-3xl">
-          <h2 className="text-center text-2xl text-gold sm:text-4xl">Estoque em tempo real</h2>
+          <h2 className="text-center text-2xl text-gold sm:text-4xl">
+            Estoque a esgotar em tempo real
+          </h2>
+          <p className="mt-3 text-center text-sm text-muted-foreground">
+            Cada compra confirmada baixa este contador. Quando chegar a zero, encerramos a promoção.
+          </p>
           <StockCounter />
+          <div className="mt-8 text-center">
+            <CTA label="GARANTIR A MINHA UNIDADE" />
+          </div>
         </Reveal>
       </section>
+
 
 
       {/* BENEFITS */}

@@ -59,7 +59,7 @@ function CTA({ label = "COMPRAR AGORA", className = "" }: { label?: string; clas
 
 function TopBar() {
   const item =
-    "🚨 PROMOÇÃO IMPERDÍVEL • Entrega Grátis a Toda Luanda • Só Nas Próximas 24H • Estoque Limitado •";
+    "🚨 ÚLTIMAS UNIDADES • Entrega GRÁTIS no mesmo dia • Preço volta a 17.000 Kz depois das 24H •";
   return (
     <div className="fixed inset-x-0 top-0 z-50 overflow-hidden bg-red-gradient py-2">
       <div className="flex w-[200%] animate-marquee">

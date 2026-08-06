@@ -221,13 +221,17 @@ function Index() {
                 5.500 Kz
               </span>
               <span className="rounded-full bg-red-gradient px-4 py-1.5 text-sm font-bold text-primary-foreground">
-                Poupas 11.500 Kz
+                Poupas 11.500 Kz (68% OFF)
               </span>
             </div>
 
             <div className="mt-8">
-              <CTA />
+              <CTA label="QUERO O MEU KIT POR 5.500 KZ" />
+              <p className="mt-3 text-center text-xs text-muted-foreground lg:text-left">
+                🔒 Pagamento seguro • 🚚 Entrega grátis hoje • ↩️ 7 dias de garantia
+              </p>
             </div>
+
           </div>
 
           <div className="relative">

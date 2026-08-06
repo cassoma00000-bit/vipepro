@@ -366,16 +366,18 @@ function Index() {
       <section id="pedido" className="px-5 py-20">
         <Reveal>
           <h2 className="text-center text-3xl sm:text-5xl">
-            Garante o teu <span className="text-gold">agora</span>
+            Reserva o teu kit em <span className="text-gold">30 segundos</span>
           </h2>
           <p className="mx-auto mt-3 max-w-lg text-center text-sm text-muted-foreground">
-            Coloca o teu nome e bairro para acompanhar o motoboy em tempo real.
+            Coloca nome, telefone e bairro. Confirmas o pagamento e o motoboy sai hoje — acompanhas
+            a entrega em tempo real.
           </p>
           <div className="mt-10">
             <OrderSimulator />
           </div>
         </Reveal>
       </section>
+
 
       {/* TESTIMONIALS */}
       <section className="border-y border-border bg-surface px-5 py-20">

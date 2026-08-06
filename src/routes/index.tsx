@@ -544,6 +544,7 @@ function Index() {
           <div className="leading-tight">
             <p className="text-xs text-muted-foreground line-through">17.000 Kz</p>
             <p className="font-display text-xl text-gold">5.500 Kz</p>
+            <p className="text-[10px] uppercase tracking-widest text-primary">Entrega grátis hoje</p>
           </div>
           <a
             href={CHECKOUT_URL}
@@ -551,8 +552,9 @@ function Index() {
             rel="noopener noreferrer"
             className="flex-1 rounded-xl bg-red-gradient px-5 py-3 text-center font-display text-lg text-primary-foreground animate-pulse-glow sm:flex-none sm:px-10"
           >
-            Comprar agora
+            Quero o meu agora
           </a>
+
         </div>
       </div>
     </div>

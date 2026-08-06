@@ -35,7 +35,7 @@ export function StockCounter() {
   return (
     <div className="mt-10 rounded-2xl border border-primary/50 bg-surface-2 p-6">
       <p className="text-center font-display text-lg text-primary animate-scarcity">
-        🔥 Restam apenas {units} unidades disponíveis
+        🔥 Restam apenas {units} kits — a esgotar rápido
       </p>
       <div className="mt-4 h-3 w-full overflow-hidden rounded-full bg-background">
         <div

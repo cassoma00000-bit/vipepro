@@ -26,9 +26,9 @@ import { CHECKOUT_URL, OrderSimulator } from "@/components/OrderSimulator";
 import { Reveal } from "@/components/Reveal";
 import { StockCounter } from "@/components/StockCounter";
 
-const TITLE = "Promoção 24h: 2 LED Astronauta Projetor Galáxia por 5.500 Kz";
+const TITLE = "Só Hoje: 2 LED Astronauta Galáxia por 5.500 Kz em Luanda";
 const DESCRIPTION =
-  "Transforma qualquer ambiente num show de estrelas: kit com 2 projetores LED Astronauta Galáxia por apenas 5.500 Kz. Entrega grátis no mesmo dia em toda Luanda.";
+  "Últimas unidades: kit com 2 projetores LED Astronauta Galáxia de 17.000 Kz por 5.500 Kz. Entrega grátis no mesmo dia em Luanda e 7 dias de garantia. Oferta acaba em 24h.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -59,7 +59,7 @@ function CTA({ label = "COMPRAR AGORA", className = "" }: { label?: string; clas
 
 function TopBar() {
   const item =
-    "🚨 PROMOÇÃO IMPERDÍVEL • Entrega Grátis a Toda Luanda • Só Nas Próximas 24H • Estoque Limitado •";
+    "🚨 ÚLTIMAS UNIDADES • Entrega GRÁTIS no mesmo dia • Preço volta a 17.000 Kz depois das 24H •";
   return (
     <div className="fixed inset-x-0 top-0 z-50 overflow-hidden bg-red-gradient py-2">
       <div className="flex w-[200%] animate-marquee">
@@ -158,10 +158,16 @@ function Index() {
       {/* COUNTDOWN NO TOPO */}
       <section className="border-b border-border bg-surface px-5 py-8">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-center text-xl text-gold sm:text-3xl">A oferta termina em</h2>
+          <h2 className="text-center text-xl text-gold sm:text-3xl">
+            O preço de 5.500 Kz acaba em
+          </h2>
           <div className="mt-6">
             <Countdown />
           </div>
+          <p className="mt-5 text-center text-sm text-muted-foreground">
+            Quando o tempo chegar a zero (ou o estoque esgotar), o kit volta aos{" "}
+            <strong className="text-foreground">17.000 Kz</strong>. Não avisamos duas vezes.
+          </p>
         </div>
       </section>
 
@@ -176,17 +182,20 @@ function Index() {
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
           <div className="animate-rise text-center lg:text-left">
             <span className="inline-block rounded-full border border-accent/50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.3em] text-gold">
-              Promoção imperdível • 24 horas
+              Últimas unidades • só nas próximas 24h
             </span>
             <h1 className="mt-6 text-4xl leading-[0.95] sm:text-6xl">
-              <span className="text-gold">Transforma qualquer ambiente</span>
+              <span className="text-gold">Transforma o teu quarto</span>
               <br />
-              num show de estrelas ✨
+              num céu estrelado hoje à noite ✨
             </h1>
             <p className="mt-5 text-lg text-muted-foreground">
-              Kit com <strong className="text-foreground">2 LED Astronauta — Projetor Galáxia</strong>{" "}
-              por apenas 5.500 Kz, com entrega grátis a toda Luanda.
+              Leva <strong className="text-foreground">2 LED Astronauta — Projetor Galáxia</strong> por
+              5.500 Kz em vez de 17.000 Kz. Pagas agora, o motoboy entrega{" "}
+              <strong className="text-foreground">hoje mesmo</strong> e a entrega é grátis em toda
+              Luanda. Se não gostares, devolvemos o teu dinheiro em 7 dias.
             </p>
+
 
             <ul className="mt-6 flex flex-wrap justify-center gap-3 lg:justify-start">
               {[
@@ -212,13 +221,17 @@ function Index() {
                 5.500 Kz
               </span>
               <span className="rounded-full bg-red-gradient px-4 py-1.5 text-sm font-bold text-primary-foreground">
-                Poupas 11.500 Kz
+                Poupas 11.500 Kz (68% OFF)
               </span>
             </div>
 
             <div className="mt-8">
-              <CTA />
+              <CTA label="QUERO O MEU KIT POR 5.500 KZ" />
+              <p className="mt-3 text-center text-xs text-muted-foreground lg:text-left">
+                🔒 Pagamento seguro • 🚚 Entrega grátis hoje • ↩️ 7 dias de garantia
+              </p>
             </div>
+
           </div>
 
           <div className="relative">
@@ -253,10 +266,19 @@ function Index() {
       {/* STOCK */}
       <section className="border-y border-border bg-surface px-5 py-16">
         <Reveal className="mx-auto max-w-3xl">
-          <h2 className="text-center text-2xl text-gold sm:text-4xl">Estoque em tempo real</h2>
+          <h2 className="text-center text-2xl text-gold sm:text-4xl">
+            Estoque a esgotar em tempo real
+          </h2>
+          <p className="mt-3 text-center text-sm text-muted-foreground">
+            Cada compra confirmada baixa este contador. Quando chegar a zero, encerramos a promoção.
+          </p>
           <StockCounter />
+          <div className="mt-8 text-center">
+            <CTA label="GARANTIR A MINHA UNIDADE" />
+          </div>
         </Reveal>
       </section>
+
 
 
       {/* BENEFITS */}
@@ -353,16 +375,18 @@ function Index() {
       <section id="pedido" className="px-5 py-20">
         <Reveal>
           <h2 className="text-center text-3xl sm:text-5xl">
-            Garante o teu <span className="text-gold">agora</span>
+            Reserva o teu kit em <span className="text-gold">30 segundos</span>
           </h2>
           <p className="mx-auto mt-3 max-w-lg text-center text-sm text-muted-foreground">
-            Coloca o teu nome e bairro para acompanhar o motoboy em tempo real.
+            Coloca nome, telefone e bairro. Confirmas o pagamento e o motoboy sai hoje — acompanhas
+            a entrega em tempo real.
           </p>
           <div className="mt-10">
             <OrderSimulator />
           </div>
         </Reveal>
       </section>
+
 
       {/* TESTIMONIALS */}
       <section className="border-y border-border bg-surface px-5 py-20">
@@ -462,17 +486,22 @@ function Index() {
       <section className="border-t border-border px-5 py-24 text-center">
         <Reveal>
           <h2 className="mx-auto max-w-3xl text-4xl leading-tight sm:text-6xl">
-            Não deixes esta <span className="text-gold">oportunidade</span> passar!
+            Amanhã este kit custa <span className="text-gold">17.000 Kz</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-            O preço promocional de 5.500 Kz termina em 24 horas. Depois da promoção, o valor volta
-            para 17.000 Kz.
+            Hoje pagas 5.500 Kz pelos 2 LEDs, com entrega grátis no mesmo dia e 7 dias para
+            devolver se não gostares. Quando o contador chegar a zero — ou as últimas unidades
+            saírem — o preço volta ao normal.
           </p>
           <div className="mt-10">
-            <CTA label="🔥 GARANTIR O MEU AGORA" />
+            <CTA label="🔥 QUERO GARANTIR ANTES DE ESGOTAR" />
           </div>
+          <p className="mt-4 text-xs text-muted-foreground">
+            Risco zero: se não gostares, devolvemos 100% do teu dinheiro em 7 dias.
+          </p>
         </Reveal>
       </section>
+
 
       {/* FOOTER */}
       <footer className="border-t border-border bg-surface px-5 py-14">
@@ -515,6 +544,7 @@ function Index() {
           <div className="leading-tight">
             <p className="text-xs text-muted-foreground line-through">17.000 Kz</p>
             <p className="font-display text-xl text-gold">5.500 Kz</p>
+            <p className="text-[10px] uppercase tracking-widest text-primary">Entrega grátis hoje</p>
           </div>
           <a
             href={CHECKOUT_URL}
@@ -522,8 +552,9 @@ function Index() {
             rel="noopener noreferrer"
             className="flex-1 rounded-xl bg-red-gradient px-5 py-3 text-center font-display text-lg text-primary-foreground animate-pulse-glow sm:flex-none sm:px-10"
           >
-            Comprar agora
+            Quero o meu agora
           </a>
+
         </div>
       </div>
     </div>

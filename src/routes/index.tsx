@@ -182,17 +182,20 @@ function Index() {
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
           <div className="animate-rise text-center lg:text-left">
             <span className="inline-block rounded-full border border-accent/50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.3em] text-gold">
-              Promoção imperdível • 24 horas
+              Últimas unidades • só nas próximas 24h
             </span>
             <h1 className="mt-6 text-4xl leading-[0.95] sm:text-6xl">
-              <span className="text-gold">Transforma qualquer ambiente</span>
+              <span className="text-gold">Transforma o teu quarto</span>
               <br />
-              num show de estrelas ✨
+              num céu estrelado hoje à noite ✨
             </h1>
             <p className="mt-5 text-lg text-muted-foreground">
-              Kit com <strong className="text-foreground">2 LED Astronauta — Projetor Galáxia</strong>{" "}
-              por apenas 5.500 Kz, com entrega grátis a toda Luanda.
+              Leva <strong className="text-foreground">2 LED Astronauta — Projetor Galáxia</strong> por
+              5.500 Kz em vez de 17.000 Kz. Pagas agora, o motoboy entrega{" "}
+              <strong className="text-foreground">hoje mesmo</strong> e a entrega é grátis em toda
+              Luanda. Se não gostares, devolvemos o teu dinheiro em 7 dias.
             </p>
+
 
             <ul className="mt-6 flex flex-wrap justify-center gap-3 lg:justify-start">
               {[

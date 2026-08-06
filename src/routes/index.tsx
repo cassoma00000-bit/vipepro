@@ -158,10 +158,16 @@ function Index() {
       {/* COUNTDOWN NO TOPO */}
       <section className="border-b border-border bg-surface px-5 py-8">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-center text-xl text-gold sm:text-3xl">A oferta termina em</h2>
+          <h2 className="text-center text-xl text-gold sm:text-3xl">
+            O preço de 5.500 Kz acaba em
+          </h2>
           <div className="mt-6">
             <Countdown />
           </div>
+          <p className="mt-5 text-center text-sm text-muted-foreground">
+            Quando o tempo chegar a zero (ou o estoque esgotar), o kit volta aos{" "}
+            <strong className="text-foreground">17.000 Kz</strong>. Não avisamos duas vezes.
+          </p>
         </div>
       </section>
 

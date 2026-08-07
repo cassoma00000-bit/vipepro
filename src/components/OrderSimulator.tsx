@@ -176,14 +176,12 @@ export function OrderSimulator() {
             </p>
           </div>
 
-          <a
-            href={CHECKOUT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/pagamento"
             className="block w-full rounded-2xl bg-red-gradient px-6 py-5 text-center font-display text-xl tracking-wide text-primary-foreground animate-pulse-glow transition hover:brightness-110"
           >
             💳 Pagar agora {total.toLocaleString("pt-AO")} Kz
-          </a>
+          </Link>
 
           <button
             type="button"

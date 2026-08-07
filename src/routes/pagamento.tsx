@@ -92,19 +92,28 @@ function PagamentoPage() {
           Assiste ao vídeo até ao fim — logo a seguir aparece o botão para concluir a tua compra.
         </p>
 
-        <div className="mx-auto mt-8 w-full max-w-[496px] overflow-hidden rounded-3xl border border-border bg-surface glow-gold">
-          <div className="relative w-full" style={{ paddingTop: "170.97%" }}>
+        <div
+          id={`ifr_${PLAYER_ID}_wrapper`}
+          className="mx-auto mt-8 w-full max-w-[400px] overflow-hidden rounded-3xl border border-border bg-surface glow-gold"
+        >
+          <div
+            id={`ifr_${PLAYER_ID}_aspect`}
+            className="relative w-full"
+            style={{ paddingTop: "170.96774193548387%" }}
+          >
             <iframe
               ref={iframeRef}
-              src="https://player.vimeo.com/video/1216368982?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              id={`ifr_${PLAYER_ID}`}
+              src="about:blank"
+              allowFullScreen
               className="absolute inset-0 h-full w-full"
               frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
+              referrerPolicy="origin"
               title="VSL"
             />
           </div>
         </div>
+
 
         <div className="mt-8">
           {done ? (

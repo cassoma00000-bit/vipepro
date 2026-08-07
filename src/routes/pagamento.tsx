@@ -67,7 +67,7 @@ function PagamentoPage() {
         clearInterval(poll);
         try {
           inst.on("ended", () => setDone(true));
-ずz        } catch {
+} catch {
           /* noop */
         }
       }

@@ -46,14 +46,12 @@ export const Route = createFileRoute("/")({
 
 function CTA({ label = "COMPRAR AGORA", className = "" }: { label?: string; className?: string }) {
   return (
-    <a
-      href={CHECKOUT_URL}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      to="/pagamento"
       className={`inline-block rounded-2xl bg-red-gradient px-8 py-5 text-center font-display text-xl tracking-wide text-primary-foreground animate-pulse-glow transition hover:brightness-110 sm:text-2xl ${className}`}
     >
       {label}
-    </a>
+    </Link>
   );
 }
 

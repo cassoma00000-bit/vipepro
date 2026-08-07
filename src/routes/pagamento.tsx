@@ -24,13 +24,26 @@ export const Route = createFileRoute("/pagamento")({
   component: PagamentoPage,
 });
 
+const PLAYER_ID = "6a75c8483bfdb8f21cf42595";
+const PLAYER_SRC = `https://scripts.converteai.net/7710d261-301c-48f2-81ab-7125f3ca7317/players/${PLAYER_ID}/v4/embed.html`;
+
 function PagamentoPage() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    const s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
+    s.async = true;
+    document.head.appendChild(s);
+
+    const iframe = iframeRef.current;
+    if (iframe && iframe.src === "about:blank") {
+      iframe.src = `${PLAYER_SRC}${location.search || "?"}&vl=${encodeURIComponent(location.href)}`;
+    }
+
     function onMessage(e: MessageEvent) {
-      if (typeof e.origin !== "string" || !e.origin.includes("vimeo.com")) return;
+      if (typeof e.origin !== "string" || !e.origin.includes("converteai.net")) return;
       let data: any = e.data;
       if (typeof data === "string") {
         try {
@@ -39,16 +52,31 @@ function PagamentoPage() {
           return;
         }
       }
-      if (data?.event === "ready") {
-        iframeRef.current?.contentWindow?.postMessage(
-          JSON.stringify({ method: "addEventListener", value: "ended" }),
-          "https://player.vimeo.com",
-        );
+      const name = String(data?.event ?? data?.type ?? data?.name ?? "").toLowerCase();
+      if (name.includes("ended") || name.includes("complete") || name.includes("finish")) {
+        setDone(true);
       }
-      if (data?.event === "ended") setDone(true);
     }
     window.addEventListener("message", onMessage);
-    return () => window.removeEventListener("message", onMessage);
+
+    // Fallback: liga o SDK quando estiver disponível
+    const poll = setInterval(() => {
+      const sp: any = (window as any).smartplayer;
+      const inst = sp?.instances?.[0];
+      if (inst?.on) {
+        clearInterval(poll);
+        try {
+          inst.on("ended", () => setDone(true));
+ずz        } catch {
+          /* noop */
+        }
+      }
+    }, 800);
+
+    return () => {
+      window.removeEventListener("message", onMessage);
+      clearInterval(poll);
+    };
   }, []);
 
   return (

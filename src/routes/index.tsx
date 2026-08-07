@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   BadgeCheck,
@@ -22,7 +22,7 @@ import photo1 from "@/assets/image-4.png";
 import photo2 from "@/assets/image-5.png";
 import photo3 from "@/assets/image-6.png";
 import { Countdown } from "@/components/Countdown";
-import { CHECKOUT_URL, OrderSimulator } from "@/components/OrderSimulator";
+import { OrderSimulator } from "@/components/OrderSimulator";
 import { Reveal } from "@/components/Reveal";
 import { StockCounter } from "@/components/StockCounter";
 
@@ -46,14 +46,12 @@ export const Route = createFileRoute("/")({
 
 function CTA({ label = "COMPRAR AGORA", className = "" }: { label?: string; className?: string }) {
   return (
-    <a
-      href={CHECKOUT_URL}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      to="/pagamento"
       className={`inline-block rounded-2xl bg-red-gradient px-8 py-5 text-center font-display text-xl tracking-wide text-primary-foreground animate-pulse-glow transition hover:brightness-110 sm:text-2xl ${className}`}
     >
       {label}
-    </a>
+    </Link>
   );
 }
 
@@ -546,14 +544,12 @@ function Index() {
             <p className="font-display text-xl text-gold">5.500 Kz</p>
             <p className="text-[10px] uppercase tracking-widest text-primary">Entrega grátis hoje</p>
           </div>
-          <a
-            href={CHECKOUT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/pagamento"
             className="flex-1 rounded-xl bg-red-gradient px-5 py-3 text-center font-display text-lg text-primary-foreground animate-pulse-glow sm:flex-none sm:px-10"
           >
             Quero o meu agora
-          </a>
+          </Link>
 
         </div>
       </div>
